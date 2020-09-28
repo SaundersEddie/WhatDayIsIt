@@ -5,8 +5,8 @@
 USE NationalDay_db;
 
 INSERT INTO ourDays (day_name, day_date)
-VALUES ("Christmas Day", '25th Dec 2020'),
-("Boxing Day", '26th Dec 2020'),
-("Dev Birthday", '15th Oct 2020'),
-("DBA Birthday", '20th November 2020'),
-("Thanksgiving Day", '26th November 2020')
+VALUES ("Christmas Day", '2020-12-25'),
+("Boxing Day", '2020-12-26'),
+("Dev Birthday", '2020-10-20'),
+("DBA Birthday", '2020-11-15'),
+("Thanksgiving Day", '2020-11-26')
