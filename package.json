@@ -1,0 +1,25 @@
+{
+  "name": "whatdayisit",
+  "version": "1.0.0",
+  "description": "National Day of lookup",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaundersEddie/WhatDayIsIt.git"
+  },
+  "author": "Eddie Saunders",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaundersEddie/WhatDayIsIt/issues"
+  },
+  "homepage": "https://github.com/SaundersEddie/WhatDayIsIt#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "node": "^14.12.0",
+    "nodemon": "^2.0.4"
+  }
+}
