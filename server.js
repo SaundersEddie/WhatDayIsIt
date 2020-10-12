@@ -12,10 +12,8 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-// app.set("view engine", "handlebars");
 
-// const routes = require("./controllers/burger_Controller.js");
+const routes = require("./controllers/dayController.js");
 
 // app.use(routes);
 
