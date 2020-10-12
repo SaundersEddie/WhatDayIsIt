@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous" defer></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous" defer></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/calendarpickerjs@1.2.0" defer></script>
     <script src="./assets/script/myScript.js" defer></script>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -41,6 +41,66 @@
     <br><hr><br>
     <p class="centreText">This is a small JQuery and mongoDB App allowing the user to select a date and see if this is a 'National Day Of'</p>
     <button type="button" class="btn btn-primary">Primary</button>
+
+    <div id="myCalendarWrapper">
+        <div id="calendar-wrapper">
+            <header>
+                <h4>October - 2020</h4>
+            </header>
+        <div id="calendar">
+            <section id="calendar-days">
+                <span>Monday</span><span>Tuesday</span><span>Wednesday</span><span>Thursday</span><span>Friday</span><span>Saturday</span><span>Sunday</span
+            ></section>
+            <section id="navigation-wrapper">
+                <button id="previous-month" aria-label="Go to previous month">
+                    <svg enable-background="new 0 0 386.257 386.257" viewBox="0 0 386.257 386.257" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 96.879 193.129 192.5 193.128-192.5z"></path>
+                    </svg>
+                </button>
+                <button id="next-month" aria-label="Go to next month"><svg enable-background="new 0 0 386.257 386.257" viewBox="0 0 386.257 386.257" xmlns="http://www.w3.org/2000/svg">
+                <path d="m0 96.879 193.129 192.5 193.128-192.5z"></path>
+                </svg>
+                </button>
+            </section>
+            <section id="calendar-grid">
+                <span class="disabled"></span>
+                <span class="disabled"></span>
+                <span class="disabled"></span>
+                <time class="disabled">01</time>
+                <time class="disabled">02</time>
+                <time class="disabled">03</time>
+                <time class="disabled">04</time>
+                <time class="disabled">05</time>
+                <time class="disabled">06</time>
+                <time class="disabled">07</time>
+                <time class="disabled">08</time>
+                <time class="disabled">09</time>
+                <time class="disabled">10</time>
+                <time class="disabled">11</time>
+                <time tabindex="0">12</time>
+                <time tabindex="0">13</time>
+                <time tabindex="0">14</time>
+                <time tabindex="0">15</time>
+                <time tabindex="0">16</time>
+                <time tabindex="0">17</time>
+                <time tabindex="0">18</time>
+                <time tabindex="0">19</time>
+                <time tabindex="0">20</time>
+                <time tabindex="0">21</time>
+                <time tabindex="0">22</time>
+                <time tabindex="0">23</time>
+                <time tabindex="0" class="selected">24</time>
+                <time tabindex="0">25</time>
+                <time tabindex="0">26</time>
+                <time tabindex="0">27</time>
+                <time tabindex="0">28</time>
+                <time tabindex="0">29</time>
+                <time tabindex="0">30</time>
+                <time tabindex="0">31</time>
+            </section>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
