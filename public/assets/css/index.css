@@ -3,7 +3,9 @@
 /* 12th Ovtober 2020 */
 
 body {
-    background-color: blue;
+    background-image: url("../images/digital-rose-1049.jpg");
+    background-size:  cover;
+    /* background-position: center; */
 }
 
 .centreText {
