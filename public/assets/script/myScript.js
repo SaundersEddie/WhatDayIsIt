@@ -1,45 +1,39 @@
-// MyScript
-
-console.log ("Script has loaded")
-
-const nextYear = new Date().getFullYear() + 1;
-const myCalender = new CalendarPicker('#myCalendarWrapper', {
-   // If max < min or min > max then the only available day will be today.
-   min: new Date(),
-   max: new Date(nextYear, 10) // NOTE: new Date(nextYear, 10) is "Sun Nov 01 nextYear"
-});
- 
-// const currentDateElement = document.getElementById('current-date');
-// currentDateElement.textContent = myCalender.value;
- 
-// const currentDayElement = document.getElementById('current-day');
-// currentDayElement.textContent = myCalender.value.getDay();
- 
-// const currentToDateString = document.getElementById('current-datestring');
-// currentToDateString.textContent = myCalender.value.toDateString();
- 
-// myCalender.onValueChange((currentValue) => {
-//    currentDateElement.textContent = currentValue;
-//    currentDayElement.textContent = currentValue.getDay();
-//    currentToDateString.textContent = currentValue.toDateString();
-//    console.log(`The current value of the calendar is: ${currentValue}`);
-// })
-
 // EXS 12th Oct 2020 
 // Show our year calendar
 // As we're not worried about year, just date and month this should be 
 // fairly simple to implement using the date functionality
+
+// const nodemon = require("nodemon");
+
+// myMonthTable will be used to create the calendar to display. Each day
+// will be a button
+let myMonthTable = "";
+let myTableStart = "<table><tr>"
+let myTableEnd = "</tr></table>"
+// let myTableBody = ""
+
 const leapYear = (year) => {
    // This will return true if a leap year
    return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
 }
 
+const displayMonth = (item) => {
+   for (let i = 0; i < item[1]; i++) {
+
+      myMonthTable += "<td id='" + item[0].slice(0,3) + (i+1) + "'</td>";
+   }
+ //  console.log (myTableStart+myMonthTable+myTableEnd);
+}
+
+// Insert our table
+
+const table = document.getElementById('myCalendarHere');
+table.append(myMonthTable);
+console.log (table);
+
+let myMonths = [['January',31],['February',0],['March',31],['April',30],['May',31],['June',30],['July',31],['August',31],['September',30],['Octover',31],['November',30],['December',31]]
 // First we need to find out if the year is a leap year
 let myYear = leapYear(new Date().getFullYear());
-console.log ("Is it a leapyear? ",myYear)
-//let myLeapYear = leapYear(myYear);
-//console.log ("myLeapYear: ", myLeapYear)
+leapYear(new Date().getFullYear()) ? myMonths[1] = ['February',29] :  myMonths[1] = ['February',28];
 
-// console.log (myDate.getFullYear())
-// let month = ['January', ]
-
+myMonths.forEach(displayMonth);
