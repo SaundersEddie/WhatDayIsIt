@@ -12,6 +12,7 @@ let myTableStart = "<table><tr>"
 let myTableEnd = "</tr></table>"
 let table = ""
 let currentMonth = "January";
+let dayOfWeekCounter =0
 
 const leapYear = (year) => {
    // This will return true if a leap year
@@ -21,12 +22,22 @@ const leapYear = (year) => {
 const displayMonth = (item) => {
    for (let i = 0; i < item[1]; i++) {
       let myID = item[0].slice(0,3) + (i+1)
-      console.log (currentMonth);
+//      console.log (currentMonth);
       if (currentMonth !== item[0]) {
          myMonthTable += '</tr><tr>';
          currentMonth = item[0];
+         dayOfWeekCounter = 0;
       }
       myMonthTable += `<td> <button id='${myID}'> ${myID} </button> </td>`;
+      if (dayOfWeekCounter < 6 ) {
+        // console.log ("Day of week counter: ", dayOfWeekCounter);
+         dayOfWeekCounter++;
+      } else {
+        // console.log ("Resetting dayOfWeekCounter");
+         
+         myMonthTable += "</tr><tr>";
+         dayOfWeekCounter = 0;
+      }
    }
 }
 
@@ -43,8 +54,8 @@ table = myTableStart+myMonthTable+myTableEnd;
 $('#myCalendarHere').append(table)
 
 $('button').click(function() { 
-   console.log ("Button Clicked")
+   //console.log ("Button Clicked")
    var id = $(this).attr('id')
-   console.log (id)
+   // console.log (id)
    return false; 
 }); 
