@@ -11,6 +11,7 @@ let myMonthTable = "";
 let myTableStart = "<table><tr>"
 let myTableEnd = "</tr></table>"
 let table = ""
+let currentMonth = "January";
 
 const leapYear = (year) => {
    // This will return true if a leap year
@@ -20,7 +21,11 @@ const leapYear = (year) => {
 const displayMonth = (item) => {
    for (let i = 0; i < item[1]; i++) {
       let myID = item[0].slice(0,3) + (i+1)
-      console.log (myID);
+      console.log (currentMonth);
+      if (currentMonth !== item[0]) {
+         myMonthTable += '</tr><tr>';
+         currentMonth = item[0];
+      }
       myMonthTable += `<td> <button id='${myID}'> ${myID} </button> </td>`;
    }
 }
