@@ -8,7 +8,7 @@
 // myMonthTable will be used to create the calendar to display. Each day
 // will be a button
 let myMonthTable = "";
-let myTableStart = "<table><tr>"
+let myTableStart = "<table class='center'><tr>"
 let myTableEnd = "</tr></table>"
 let table = ""
 let currentMonth = "January";
@@ -22,19 +22,15 @@ const leapYear = (year) => {
 const displayMonth = (item) => {
    for (let i = 0; i < item[1]; i++) {
       let myID = item[0].slice(0,3) + (i+1)
-//      console.log (currentMonth);
       if (currentMonth !== item[0]) {
          myMonthTable += '</tr><tr>';
          currentMonth = item[0];
          dayOfWeekCounter = 0;
       }
-      myMonthTable += `<td> <button id='${myID}'> ${myID} </button> </td>`;
+      myMonthTable += `<td> <button class='buttonCustom' id='${myID}'> ${i+1} </button> </td>`;
       if (dayOfWeekCounter < 6 ) {
-        // console.log ("Day of week counter: ", dayOfWeekCounter);
          dayOfWeekCounter++;
       } else {
-        // console.log ("Resetting dayOfWeekCounter");
-         
          myMonthTable += "</tr><tr>";
          dayOfWeekCounter = 0;
       }
@@ -49,13 +45,9 @@ leapYear(new Date().getFullYear()) ? myMonths[1] = ['February',29] :  myMonths[1
 myMonths.forEach(displayMonth);
 
 table = myTableStart+myMonthTable+myTableEnd;
-
-// console.log (table);
 $('#myCalendarHere').append(table)
 
 $('button').click(function() { 
-   //console.log ("Button Clicked")
    var id = $(this).attr('id')
-   // console.log (id)
    return false; 
 }); 
