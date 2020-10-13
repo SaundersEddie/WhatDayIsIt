@@ -36,3 +36,10 @@ table = myTableStart+myMonthTable+myTableEnd;
 
 // console.log (table);
 $('#myCalendarHere').append(table)
+
+$('button').click(function() { 
+   console.log ("Button Clicked")
+   var id = $(this).attr('id')
+   console.log (id)
+   return false; 
+}); 
