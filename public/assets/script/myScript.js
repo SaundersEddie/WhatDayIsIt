@@ -7,12 +7,7 @@
 
 // myMonthTable will be used to create the calendar to display. Each day
 // will be a button
-let myMonthTable = "";
-let myTableStart = "<table class='center'><tr>"
-let myTableEnd = "</tr></table>"
-let table = ""
-let currentMonth = "January";
-let dayOfWeekCounter =0
+
 
 const leapYear = (year) => {
    // This will return true if a leap year
@@ -37,19 +32,27 @@ const displayMonth = (item) => {
    }
 }
 
-
 let myMonths = [['January',31],['February',0],['March',31],['April',30],['May',31],['June',30],['July',31],['August',31],['September',30],['October',31],['November',30],['December',31]]
-// First we need to find out if the year is a leap year
 let myYear = leapYear(new Date().getFullYear());
+let myMonthTable = "";
+let myTableStart = "<table class='center'><tr>"
+let myTableEnd = "</tr></table>"
+let table = ""
+let myMonthNumber = new Date().getMonth()
+// console.log (myTestMonth)
+let currentMonth = "January";
+let dayOfWeekCounter = 0
+
+
 leapYear(new Date().getFullYear()) ? myMonths[1] = ['February',29] :  myMonths[1] = ['February',28];
 myMonths.forEach(displayMonth);
 
 table = myTableStart+myMonthTable+myTableEnd;
 $('#myCalendarHere').append(table)
-$('#monthName').text("Testing")
+$('#monthName').text(myMonths[myMonthNumber])
 $('button').click(function() { 
    var id = $(this).attr('id')
    console.log ("Buttonb clicked:L ", id)
-   $('#monthName').text(id)
+  // $('#monthName').text(id)
    return false; 
 }); 
