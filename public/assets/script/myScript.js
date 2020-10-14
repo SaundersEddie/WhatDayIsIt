@@ -38,7 +38,7 @@ const displayMonth = (item) => {
 }
 
 
-let myMonths = [['January',31],['February',0],['March',31],['April',30],['May',31],['June',30],['July',31],['August',31],['September',30],['Octover',31],['November',30],['December',31]]
+let myMonths = [['January',31],['February',0],['March',31],['April',30],['May',31],['June',30],['July',31],['August',31],['September',30],['October',31],['November',30],['December',31]]
 // First we need to find out if the year is a leap year
 let myYear = leapYear(new Date().getFullYear());
 leapYear(new Date().getFullYear()) ? myMonths[1] = ['February',29] :  myMonths[1] = ['February',28];
@@ -46,8 +46,10 @@ myMonths.forEach(displayMonth);
 
 table = myTableStart+myMonthTable+myTableEnd;
 $('#myCalendarHere').append(table)
-
+$('#monthName').text("Testing")
 $('button').click(function() { 
    var id = $(this).attr('id')
+   console.log ("Buttonb clicked:L ", id)
+   $('#monthName').text(id)
    return false; 
 }); 
