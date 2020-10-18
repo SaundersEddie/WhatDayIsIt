@@ -15,12 +15,21 @@ const leapYear = (year) => {
 }
 
 const displayOneMonth = (monthNumber) => {
+   let myTestMonthTable = "";
    console.log ("Calling Display One Month");
    // Create our table for the current month to display
-   console.log (myMonths[monthNumber][0])
+   // console.log (myMonths[monthNumber][0])
    for (let i=0; i < myMonths[monthNumber][1]; i++) {
-      console.log ("Testing: ",i+1);
+      // console.log ("Testing: ",i+1);
+      let myCellID = myMonths[monthNumber][0].slice(0,3) + (i+1);
+      // console.log (myCellID);
+      myTestMonthTable += `<td> <button class='buttonCustom' id='${myCellID}'> ${i+1} </button> </td>`;
+      // console.log (myTestMonthTable)
    }
+   let myTestTable = myTableStart + myTestMonthTable + myTableEnd;
+  // console.log (myTestTable);
+   $('#myCalendarHere').empty();
+   $('#myCalendarHere').append(myTestTable)
 }
 
 const displayMonth = (item) => {
@@ -64,10 +73,10 @@ let monthToDisplay = new Date().getMonth();
 monthTable (myMonthNumber);
 
 leapYear(new Date().getFullYear()) ? myMonths[1] = ['February',29] :  myMonths[1] = ['February',28];
-myMonths.forEach(displayMonth);
+// myMonths.forEach(displayMonth);
 
-table = myTableStart+myMonthTable+myTableEnd;
-$('#myCalendarHere').append(table)
+// table = myTableStart+myMonthTable+myTableEnd;
+// $('#myCalendarHere').append(table)
 // $('#monthName').text(myMonths[myMonthNumber])
 
 
@@ -75,19 +84,15 @@ $('button').click(function() {
    var id = $(this).attr('id')
   switch (id) {
      case "lastMonth":
-         // console.log ("Last Month Selected");
          monthToDisplay <= 0 ? monthToDisplay=11: monthToDisplay--;
          monthTable(monthToDisplay);
          break;
       case "nextMonth":
-         // console.log ("Next Month Selected");
-         // monthToDisplay++;
          monthToDisplay >= 11 ? monthToDisplay = 0 : monthToDisplay++;
          monthTable(monthToDisplay);
          break;
       default:
          console.log ("Not implemented");
   }
-
    return false; 
 }); 
