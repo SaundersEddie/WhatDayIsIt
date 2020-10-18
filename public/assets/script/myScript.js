@@ -32,6 +32,12 @@ const displayMonth = (item) => {
    }
 }
 
+const monthTable = (monthNumber) => {
+   console.log ("Our month number to display: ", myMonths[monthNumber]);
+   
+}
+
+
 let myMonths = [['January',31],['February',0],['March',31],['April',30],['May',31],['June',30],['July',31],['August',31],['September',30],['October',31],['November',30],['December',31]]
 let myYear = leapYear(new Date().getFullYear());
 let myMonthTable = "";
@@ -43,6 +49,7 @@ let myMonthNumber = new Date().getMonth()
 let currentMonth = "January";
 let dayOfWeekCounter = 0
 
+monthTable (myMonthNumber);
 
 leapYear(new Date().getFullYear()) ? myMonths[1] = ['February',29] :  myMonths[1] = ['February',28];
 myMonths.forEach(displayMonth);
@@ -52,7 +59,7 @@ $('#myCalendarHere').append(table)
 $('#monthName').text(myMonths[myMonthNumber])
 $('button').click(function() { 
    var id = $(this).attr('id')
-   console.log ("Buttonb clicked:L ", id)
+   console.log ("Buttonb clicked: ", id)
   // $('#monthName').text(id)
    return false; 
 }); 
