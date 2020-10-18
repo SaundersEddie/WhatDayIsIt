@@ -52,7 +52,7 @@ $(document).on('click','button', function() {
          break;
       default:
          // This is where our call to the database will take place
-         console.log ("Not implemented");
+         console.log (` ${id} Not implemented`);
   }
    return false; 
 }); 
