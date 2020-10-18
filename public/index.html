@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous" defer></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/calendarpickerjs@1.2.0" defer></script>
-    <script src="./assets/script/myScript.js" defer></script>
+   <script src="./assets/script/myScript.js" defer></script>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
@@ -37,15 +37,19 @@
         </div>
       </nav>
       <!-- End Bootstrap Navbar -->
-    <h1 class = "centreText">Welcome To The "What Day Is It?" App</h1>
-    <br><hr><br>
+    <h1 class = "centreText">What Day Is It?</h1>
+    <hr>
     <p class="centreText">This is a small JQuery and mongoDB App allowing the user to select a date and see if this is a 'National Day Of'</p>
     
-    <div id="centreText">
-      <button id="lastMonth">Last Month</button><span id="monthName">Current Month</span> <button id="nextMonth">Next Month</button>
+    <div class="text-center">
+      <div id="button-container" class="btn-group">
+    <!-- </div>id="centreText"> -->
+      <button id="lastMonth">Last Month</button><span class="monthName" id="monthName">Current Month</span> <button id="nextMonth">Next Month</button>
+      </div>
     </div>
+    <hr>
 
-    <h3 align=center>This is where our calendar will go, right now we're in test mode to make sure everything is displaying</h3>
+    <!-- <h3 align=center>This is where our calendar will go, right now we're in test mode to make sure everything is displaying</h3> -->
     <div id="myCalendarHere"></div>
     <div id="ourDateInfo">Test</div>
 </body>

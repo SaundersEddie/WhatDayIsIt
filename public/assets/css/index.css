@@ -14,8 +14,17 @@ body {
 
 .buttonCustom {
     width: 75px !important;
+    padding: 10px 10px !important;
 }
 
+.text-center {
+    margin: 10px 10px !important;
+}
+
+.monthName {
+    margin: 10px 10px;
+    font-weight: bold;
+}
 .center {
     margin-left: auto;
     margin-right: auto;
