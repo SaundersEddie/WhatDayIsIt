@@ -33,8 +33,10 @@ const displayMonth = (item) => {
 }
 
 const monthTable = (monthNumber) => {
-   console.log ("Our month number to display: ", myMonths[monthNumber]);
-   
+   // console.log ("Our month number to display: ", myMonths[monthNumber]);
+   // console.log (monthNumber)
+   $('#monthName').text(myMonths[monthNumber])
+
 }
 
 
@@ -48,6 +50,8 @@ let myMonthNumber = new Date().getMonth()
 // console.log (myTestMonth)
 let currentMonth = "January";
 let dayOfWeekCounter = 0
+let monthToDisplay = new Date().getMonth();
+
 
 monthTable (myMonthNumber);
 
@@ -56,10 +60,26 @@ myMonths.forEach(displayMonth);
 
 table = myTableStart+myMonthTable+myTableEnd;
 $('#myCalendarHere').append(table)
-$('#monthName').text(myMonths[myMonthNumber])
+// $('#monthName').text(myMonths[myMonthNumber])
+
+
 $('button').click(function() { 
    var id = $(this).attr('id')
-   console.log ("Buttonb clicked: ", id)
-  // $('#monthName').text(id)
+  switch (id) {
+     case "lastMonth":
+         // console.log ("Last Month Selected");
+         monthToDisplay <= 0 ? monthToDisplay=11: monthToDisplay--;
+         monthTable(monthToDisplay);
+         break;
+      case "nextMonth":
+         // console.log ("Next Month Selected");
+         // monthToDisplay++;
+         monthToDisplay >= 11 ? monthToDisplay = 0 : monthToDisplay++;
+         monthTable(monthToDisplay);
+         break;
+      default:
+         console.log ("Not implemented");
+  }
+
    return false; 
 }); 

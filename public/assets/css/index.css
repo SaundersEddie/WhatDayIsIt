@@ -21,6 +21,9 @@ body {
     margin-right: auto;
   }
 
+  .myDirectionButtons {
+      text-align: center;
+  }
 @keyframes swoosh-up {
     0% {
         opacity: 1;
