@@ -16,18 +16,18 @@ const leapYear = (year) => {
 
 const displayOneMonth = (monthNumber) => {
    let myTestMonthTable = "";
-   console.log ("Calling Display One Month");
-   // Create our table for the current month to display
-   // console.log (myMonths[monthNumber][0])
+   let myDayNumber = 0;
    for (let i=0; i < myMonths[monthNumber][1]; i++) {
-      // console.log ("Testing: ",i+1);
       let myCellID = myMonths[monthNumber][0].slice(0,3) + (i+1);
-      // console.log (myCellID);
       myTestMonthTable += `<td> <button class='buttonCustom' id='${myCellID}'> ${i+1} </button> </td>`;
-      // console.log (myTestMonthTable)
+      if (myDayNumber < 6 ) {
+         myDayNumber++;
+      } else {
+         myTestMonthTable += "</tr><tr>";
+         myDayNumber = 0;
+      }
    }
    let myTestTable = myTableStart + myTestMonthTable + myTableEnd;
-  // console.log (myTestTable);
    $('#myCalendarHere').empty();
    $('#myCalendarHere').append(myTestTable)
 }
