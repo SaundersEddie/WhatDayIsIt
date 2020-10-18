@@ -14,6 +14,15 @@ const leapYear = (year) => {
    return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
 }
 
+const displayOneMonth = (monthNumber) => {
+   console.log ("Calling Display One Month");
+   // Create our table for the current month to display
+   console.log (myMonths[monthNumber][0])
+   for (let i=0; i < myMonths[monthNumber][1]; i++) {
+      console.log ("Testing: ",i+1);
+   }
+}
+
 const displayMonth = (item) => {
    for (let i = 0; i < item[1]; i++) {
       let myID = item[0].slice(0,3) + (i+1)
@@ -33,9 +42,8 @@ const displayMonth = (item) => {
 }
 
 const monthTable = (monthNumber) => {
-   // console.log ("Our month number to display: ", myMonths[monthNumber]);
-   // console.log (monthNumber)
-   $('#monthName').text(myMonths[monthNumber])
+   $('#monthName').text(myMonths[monthNumber][0])
+   displayOneMonth(monthNumber);
 
 }
 
