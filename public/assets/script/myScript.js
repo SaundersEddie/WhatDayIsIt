@@ -8,13 +8,18 @@
 // myMonthTable will be used to create the calendar to display. Each day
 // will be a button
 
+const leapYear = (year) => { return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0) };
 
-const leapYear = (year) => {
-   // This will return true if a leap year
-   return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
-}
+let myMonths = [['January',31],['February',0],['March',31],['April',30],['May',31],['June',30],['July',31],['August',31],['September',30],['October',31],['November',30],['December',31]]
+let myYear = leapYear(new Date().getFullYear());
+let myMonthNumber = new Date().getMonth()
+let monthToDisplay = new Date().getMonth();
+
+leapYear(new Date().getFullYear()) ? myMonths[1] = ['February',29] :  myMonths[1] = ['February',28];
 
 const displayOneMonth = (monthNumber) => {
+   let myTableStart = "<table class='center'><tr>"
+   let myTableEnd = "</tr></table>" 
    let myTestMonthTable = "";
    let myDayNumber = 0;
    for (let i=0; i < myMonths[monthNumber][1]; i++) {
@@ -32,58 +37,18 @@ const displayOneMonth = (monthNumber) => {
    $('#myCalendarHere').append(myTestTable)
 }
 
-const displayMonth = (item) => {
-   for (let i = 0; i < item[1]; i++) {
-      let myID = item[0].slice(0,3) + (i+1)
-      if (currentMonth !== item[0]) {
-         myMonthTable += '</tr><tr>';
-         currentMonth = item[0];
-         dayOfWeekCounter = 0;
-      }
-      myMonthTable += `<td> <button class='buttonCustom' id='${myID}'> ${i+1} </button> </td>`;
-      if (dayOfWeekCounter < 6 ) {
-         dayOfWeekCounter++;
-      } else {
-         myMonthTable += "</tr><tr>";
-         dayOfWeekCounter = 0;
-      }
-   }
-}
-
 const monthTable = (monthNumber) => {
    $('#monthName').text(myMonths[monthNumber][0])
    displayOneMonth(monthNumber);
-
 }
-
-
-let myMonths = [['January',31],['February',0],['March',31],['April',30],['May',31],['June',30],['July',31],['August',31],['September',30],['October',31],['November',30],['December',31]]
-let myYear = leapYear(new Date().getFullYear());
-let myMonthTable = "";
-let myTableStart = "<table class='center'><tr>"
-let myTableEnd = "</tr></table>"
-let table = ""
-let myMonthNumber = new Date().getMonth()
-// console.log (myTestMonth)
-let currentMonth = "January";
-let dayOfWeekCounter = 0
-let monthToDisplay = new Date().getMonth();
-
 
 monthTable (myMonthNumber);
 
-leapYear(new Date().getFullYear()) ? myMonths[1] = ['February',29] :  myMonths[1] = ['February',28];
-// myMonths.forEach(displayMonth);
-
-// table = myTableStart+myMonthTable+myTableEnd;
-// $('#myCalendarHere').append(table)
-// $('#monthName').text(myMonths[myMonthNumber])
-
-
-$('button').click(function() { 
+$(document).on('click','button', function() {
    var id = $(this).attr('id')
-  switch (id) {
-     case "lastMonth":
+   console.log (id)
+   switch (id) {
+      case "lastMonth":
          monthToDisplay <= 0 ? monthToDisplay=11: monthToDisplay--;
          monthTable(monthToDisplay);
          break;
