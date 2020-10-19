@@ -6,8 +6,7 @@ const dayOfSchema = new Schema (
             type: String,
             default: "",
             required: true
-        }
-    },{
+        },
         name: {
             type: String,
             default: "",
@@ -15,6 +14,8 @@ const dayOfSchema = new Schema (
         }
     }
 )
+
+console.log ("Our Schema: ", dayOfSchema);
 
 const DayInfo = mongoose.model('DayInfo', dayOfSchema)
 module.exports = DayInfo

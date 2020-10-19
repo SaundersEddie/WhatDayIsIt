@@ -30,10 +30,10 @@ mongoose.connect(uri, {
   useUnifiedTopology: true,
 });
 
-const connection = mongoose.connection;
-connection.once("open", () => {
-  console.log("MongoDB database connection established successfully");
-});
+// const connection = mongoose.connection;
+// connection.once("open", () => {
+//   console.log("MongoDB database connection established successfully");
+// });
 
 app.listen(PORT, () => {
   console.log("App listening on PORT " + PORT);
