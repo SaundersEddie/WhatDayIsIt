@@ -15,3 +15,6 @@ const dayOfSchema = new Schema (
         }
     }
 )
+
+const DayInfo = mongoose.model('DayInfo', dayOfSchema)
+module.exports = DayInfo

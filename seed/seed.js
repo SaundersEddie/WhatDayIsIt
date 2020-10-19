@@ -3,12 +3,13 @@
 // 12th October 2020
 
 let mongoose = require("mongoose");
-const { stringify } = require("querystring");
-let db = require ("../models");
+// let db = require ("../models");
 
-mongoose.connect("mongodb://localhost/workout", {
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useCreateIndex: true,
+  useUnifiedTopology: true,
 });
 
 let myDaySeed = [
