@@ -1,5 +1,6 @@
 // Server code
 // Eddie Saunders saunders.eddie@outlook.com 13th May 2020
+// mongodb+srv://myTestUser:<password>@cluster0.gsy8o.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority
 
 const express = require("express");
 // const mongoose = require("mongoose");
@@ -13,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-// const routes = require("./controllers/dayController.js");
+const routes = require("./controllers/dayController.js");
 
 // app.use(routes);
 
