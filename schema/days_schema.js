@@ -29,13 +29,13 @@ const myDaySeed = new Schema (
           required: true,
           trim: true,
         },
-    },
-    {
-      timestamps: true,
     }
+    // {
+    //   timestamps: true,
+    // }
 );
 
-console.log (myDaySeed);
+// console.log (myDaySeed);
 
 const MyDayInfo = mongoose.model("MyDayInfo", myDaySeed);
 module.exports = MyDayInfo;

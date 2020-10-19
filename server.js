@@ -16,12 +16,13 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const routes = require("./controllers/dayController.js");
+const daysRoutes = require("./controllers/dayController.js");
 
 // app.use(routes);
 
 // require("./routes/api-routes.js");
 // require("./routes/html-routes.js");
+app.use("/days", daysRoutes);
 
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, {
@@ -30,10 +31,10 @@ mongoose.connect(uri, {
   useUnifiedTopology: true,
 });
 
-// const connection = mongoose.connection;
-// connection.once("open", () => {
-//   console.log("MongoDB database connection established successfully");
-// });
+const connection = mongoose.connection;
+connection.once("open", () => {
+  console.log("MongoDB database connection established successfully");
+});
 
 app.listen(PORT, () => {
   console.log("App listening on PORT " + PORT);
