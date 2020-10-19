@@ -25,5 +25,28 @@ router.route("/add").post((req, res) => {
         .catch((err) => res.status(400).json("Error: " + err));
 });
 
+router.route("/find").get((req,res) => {
+    console.log (req.body.day);
+    MyDayInfo
+        .find({day: req.body.day})
+        .then((daysInfo) => res.json(daysInfo))
+        .catch((err) => res.status(400).json("Error: Data Not Found " + err));
+        });
+
+            
+            
+            
+//             (error, data) => {
+//         if (error) {
+//             res.send ({message: error});
+//         } else {
+//             if (data === null) {
+//                 res.send({message: "No data found"});
+//             } else {
+//                 res.send (data)
+//             }
+//         }
+//     });
+// })
 
 module.exports = router;
