@@ -1,35 +1,26 @@
 // Server code
 // Eddie Saunders saunders.eddie@outlook.com 13th May 2020
-// mongodb+srv://myTestUser:<password>@cluster0.gsy8o.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
+import express from 'express';
 
-const express = require("express");
-const mongoose = require("mongoose");
-
-
-const PORT = process.env.PORT || 9000;
+dotenv.config();
+const PORT = process.env.PORT || 5000;
+const MONGO_CONNECT = process.env.MONGO_DB;
 const app = express();
 
-require ('dotenv').config();
 
 app.use(express.static("public"));
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const daysRoutes = require("./controllers/dayController.js");
-
-// app.use(routes);
-
-// require("./routes/api-routes.js");
-// require("./routes/html-routes.js");
-app.use("/days", daysRoutes);
-
-const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, {
+mongoose.connect(MONGO_CONNECT, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
 });
+
+// Open Connections 
 
 const connection = mongoose.connection;
 connection.once("open", () => {
