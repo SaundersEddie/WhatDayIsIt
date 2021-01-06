@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import express from 'express';
+import ourDays from './routes/dayRoutes.js';
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
@@ -28,3 +29,6 @@ mongoose.connect(MONGO_CONNECT, { useNewUrlParser: true, useCreateIndex: true, u
   .catch((error) => console.log("An Error Occurred: ", error.message));
 
 // Setup Routes
+// We only have two, one to create a day and the other to list all days on the submitted :date parameter
+
+app.use("/wdii", ourDays);
