@@ -1,34 +1,4 @@
-// controller for our days info, this should probably be changed to a far simpler name
-// such as routes and follow best practice/
-
-// const router = require ("express").Router();
-// const MyDayInfo = require ("../models/daySchema");
-
 import DayInfo from '../models/daySchema.js'
-
-//  console.log ("In days_controller");
-
-
-
-// router.post ('/addday', async (req, res) => {
-//     try {
-//         console.log (req.data);
-//         res.status(200).json({msg: "Add Day"});
-//     } catch (err) {
-//         res.status(500).json({error: err.message})
-//     }
-// });
-
-
-// // Get all days that meet the criteris met in :day
-// router.get ('/day:day', async (req,res) => {
-//     try {
-//         console.log (req.data)
-//         res.status(200).json({msg: "List Day"});
-//     } catch (err) {
-//         res.status(500).json({error: err.message})
-//     }
-// });
 
 export const getDay = async (req, res) => {
     try {
@@ -40,7 +10,8 @@ export const getDay = async (req, res) => {
 
 export const getAllDays = async (req, res) => {
     try {
-        res.status(200).json({"msg": req.body})
+        DayInfo.find()
+        .then ((daysInfo) => res.status(200).json(daysInfo));
     } catch (err) {
         res.status(404).json({msg: err.message});
     }
@@ -48,7 +19,12 @@ export const getAllDays = async (req, res) => {
 
 export const addDay = async (req, res) => {
     try {
-        res.status(200).json({"msg": req.body})
+        console.log (req.body);
+        const { day, name } = req.body;
+        const newDay = new DayInfo ({day, name})
+        newDay
+            .save()
+            .then (() => res.status(200).json({msg: "Date has been added"}));
     } catch (err) {
         res.status(404).json({msg: err.message});
     }
