@@ -1,4 +1,5 @@
 import Header from './components/Header/Header';
+import DayBody from './components/DayBody/DayBody';
 
 import './App.css';
 
@@ -6,7 +7,7 @@ function App() {
   return (
     <div>
       <Header />
-      <h1>Rebuild Folder Structure</h1>
+      <DayBody />
     </div>
   );
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Header () {
+export default function DayBody() {
     return (
         <div id="container">
-            <h1>What Day Is It</h1>
+            <h2>Todays Day</h2>
         </div>
     )
 }
