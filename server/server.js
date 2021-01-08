@@ -29,6 +29,6 @@ mongoose.connect(MONGO_CONNECT, { useNewUrlParser: true, useCreateIndex: true, u
   .catch((error) => console.log("An Error Occurred: ", error.message));
 
 // Setup Routes
-// We only have two, one to create a day and the other to list all days on the submitted :date parameter
+// We only have three, one to create a day, another to list all days, and one to list with a parameter
 
 app.use("/wdii", ourDays);

@@ -1,18 +1,23 @@
 * {
-    margin: 0;
-    padding: 0;
-    background-color: beige;
+  margin: 0;
+  padding: 0;
+  background-color: antiquewhite;
+}
+
+header {
+  margin: 15px;
+  padding: 15px;
+  color: white;
+  background-color: black;
+}
+
+body {
+  margin: 15px;
+  padding: 15px;
+  color: purple;
 }
 
 #container {
-    margin: 15px;
-    padding: 10px;
-}
-
-h1 {
-    color: yellowgreen
-}
-
-h2 {
-    color: orange;
+  margin: 15px;
+  padding: 10px;
 }
