@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const dayOfSchema = mongoose.Schema (
     {
         day: {
-            type: Date,
+            type: String,
             default: "",
             required: true
         },
@@ -17,4 +17,3 @@ const dayOfSchema = mongoose.Schema (
 
 const DayInfo = mongoose.model("DayInfo", dayOfSchema);
 export default DayInfo;
-// module.exports = DayInfo = mongoose.model("dayInfo", daysOfSchema)
