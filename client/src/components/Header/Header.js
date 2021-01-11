@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function Header () {
     return (
-        <header>
-            What Day Is It
+        <div id="header">
+            <span classname="title">What Day Is It</span>
             *About*
             *Usage*
-        </header>
+        </div>
     )
 }

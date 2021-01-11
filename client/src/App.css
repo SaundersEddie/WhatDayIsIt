@@ -1,19 +1,26 @@
 * {
-  margin: 0;
-  padding: 0;
+  margin: 15px;
+  /* padding: 15px; */
   background-color: antiquewhite;
 }
 
-header {
+#header {
+  font-size: larger;
   margin: 15px;
   padding: 15px;
-  color: white;
-  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header .title {
+  margin: 0;
+  padding: 0 1rem;
 }
 
 body {
-  margin: 15px;
-  padding: 15px;
+  /* margin: 15px; */
+  /* padding: 15px; */
   color: purple;
 }
 
