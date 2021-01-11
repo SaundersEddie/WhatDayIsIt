@@ -3,9 +3,15 @@ import Header from '../../components/Header/Header';
 
 export default function About() {
     return (
-        <div>
+        <>
             <Header />
             <h1>About Page</h1>
-        </div>
+            <hr/>
+            <h3>Coding</h3>
+            <p>This app was coded by Eddie Saunders</p>
+
+            <h3>Technology</h3>
+            <p>JavaScript, React, MongoDB, Axios</p>
+        </>
     )
 }

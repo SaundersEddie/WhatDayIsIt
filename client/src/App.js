@@ -17,7 +17,6 @@ function App() {
           <Route path="/usage" component={Usage} />
          </Switch>
       </BrowserRouter>
-      {/* <Header /> */}
       <DayBody />
     </>
   );
