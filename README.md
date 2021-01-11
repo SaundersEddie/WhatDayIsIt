@@ -23,11 +23,12 @@ As a user I want to know if today is a national day of or public holiday.
 # Build Status
 
 Version 0.0 Initial Build
+Version 0.5 API framework complete
 
 # Code Style and Technology
 
-This has been developed with Javascript, Node.js, express, mySQL utilizing Visual Studio Code and mySQL
-node_modules folder has been added to .gitignore
+This has been developed with Javascript, mongoDB, ExpressJS, React, NodeJS with VS Code.
+node_modules, .env folder has been added to .gitignore
 
 # Use
 
@@ -36,6 +37,7 @@ Application can be executed from the following URL:
 # Download
 
 The source for this app can be downloaded here:
+https://github.com/SaundersEddie/WhatDayIsIt
 
 # Credits
 
