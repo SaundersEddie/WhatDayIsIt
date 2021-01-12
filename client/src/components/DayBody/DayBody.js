@@ -5,14 +5,12 @@ const OurDay = props => (
     <tr>
         <td>{props.ourResults.day}</td>
         <td>{props.ourResults.name}</td>
-        <td>{props.ourResults._id}</td>
     </tr>
 )
 
 export default class DayBody extends Component {
     constructor(props) {
         super(props);
-
         this.onChangeOurSearch = this.onChangeOurSearch.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
@@ -48,12 +46,10 @@ export default class DayBody extends Component {
         if (this.state.ourSearch.toLowerCase() === "all") {
             axios.get ('/wdii/alldays')
                 .then (res => {
-                    
                     this.setState ({ 
                         ourSearch: '',
                         ourResults: res.data 
                     })
-                    console.log ("our results: " , this.state.ourResults)
                 })
                 .catch ((error) => {
                     console.log ("error:", error)
@@ -68,7 +64,6 @@ export default class DayBody extends Component {
                         ourSearch: '',
                         ourResults: res.data 
                     })
-                    console.log ("our results: " , this.state.ourResults)
                 })
                 .catch ((error) => {
                     console.log ("error:", error)

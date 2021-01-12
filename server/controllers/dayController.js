@@ -1,9 +1,7 @@
 import DayInfo from '../models/daySchema.js'
 
 export const getDay = async (req, res) => {
-    console.log ("In Get Day")
     try {
-        console.log (req.params);
         await DayInfo
             .find ({day: req.params.ourDay.toLowerCase()})
             .then ((daysInfo) => res.status(200).json(daysInfo));
@@ -13,7 +11,6 @@ export const getDay = async (req, res) => {
 }
 
 export const getAllDays = async (req, res) => {
-    console.log ("Get All Days");
     try {
         await DayInfo.find()
         .then ((daysInfo) => res.status(200).json(daysInfo));
