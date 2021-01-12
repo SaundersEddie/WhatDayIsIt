@@ -28,7 +28,4 @@ mongoose.connect(MONGO_CONNECT, { useNewUrlParser: true, useCreateIndex: true, u
   .then(() => app.listen(PORT, () => console.log(`API Server listening on ${PORT}`)))
   .catch((error) => console.log("An Error Occurred: ", error.message));
 
-// Setup Routes
-// We only have three, one to create a day, another to list all days, and one to list with a parameter
-
 app.use("/wdii", ourDays);
