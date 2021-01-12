@@ -10,29 +10,20 @@ export default class DayBody extends Component {
 
         this.state = {
             ourSearch: '',
-            ourResults: [],
+            ourResults: []
         };
     }
 
     componentDidMount() {
-        this.setState({
-            ourSearch: '',
-            ourResults: [],
-        });
-
-        const ourMonths = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+        let ourMonths = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
         let todayDate = new Date();
-        let todayMonth = ourMonths[todayDate.getMonth()];
-        let todayDay = todayDate.getDate();
-        const todaySearch = `${todayMonth}-${todayDay}`
-        console.log (todaySearch)
-        // Test run to pull all data
-        axios.get(`/wdii/showday/${todaySearch}`)
+        axios.get ('/wdii/showday/'+ourMonths[todayDate.getMonth()]+'-'+todayDate.getDate())
             .then (res => {
-                console.log (res.data)
-            }) 
-            .catch((error) => {
-                console.log (`Error pulling data: ${error}`)
+                this.setState ({ ourResults: res.data })
+                console.log ("our results: " , this.state.ourResults)
+            })
+            .catch ((error) => {
+                console.log ("error:", error)
             });
     }
 
@@ -44,7 +35,37 @@ export default class DayBody extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        console.log ("Find Clicked");
+        console.log ("Find Clicked: ", this.state.ourSearch);
+
+        if (this.state.ourSearch.toLowerCase() === "all") {
+            axios.get ('/wdii/alldays')
+                .then (res => {
+                    
+                    this.setState ({ 
+                        ourSearch: '',
+                        ourResults: res.data 
+                    })
+                    console.log ("our results: " , this.state.ourResults)
+                })
+                .catch ((error) => {
+                    console.log ("error:", error)
+                });
+        }
+        else {
+            let ourMonths = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+            let todayDate = new Date();
+            axios.get ('/wdii/showday/'+ourMonths[todayDate.getMonth()]+'-'+todayDate.getDate())
+                .then (res => {
+                    this.setState ({ 
+                        ourSearch: '',
+                        ourResults: res.data 
+                    })
+                    console.log ("our results: " , this.state.ourResults)
+                })
+                .catch ((error) => {
+                    console.log ("error:", error)
+                });
+        }
     }
 
     render() {
