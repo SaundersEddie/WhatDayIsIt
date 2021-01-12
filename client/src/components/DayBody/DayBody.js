@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
+const OurDay = props => (
+    <tr>
+        <td>{props.ourResults.day}</td>
+        <td>{props.ourResults.name}</td>
+        <td>{props.ourResults._id}</td>
+    </tr>
+)
+
 export default class DayBody extends Component {
     constructor(props) {
         super(props);
@@ -68,6 +76,12 @@ export default class DayBody extends Component {
         }
     }
 
+    dayList() {
+        return this.state.ourResults.map(currentday => {
+            return <OurDay ourResults={currentday} key={currentday._id} />;
+        })
+    }
+
     render() {
         return (
             <>
@@ -84,6 +98,19 @@ export default class DayBody extends Component {
                         value="Find Day" 
                     />
                 </form>
+                <h1>Our Results</h1>
+                <hr/>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Day Of</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.dayList()}
+                    </tbody>
+                </table>
             </>
         )
     }
