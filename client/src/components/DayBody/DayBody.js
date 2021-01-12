@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-// import Axios from 'axios';
-// import Header from '../Header/Header';
+import axios from 'axios';
 
 export default class DayBody extends Component {
     constructor(props) {
@@ -21,13 +20,20 @@ export default class DayBody extends Component {
             ourResults: [],
         });
 
-        // Setup our default values and log them before we kick in the calls to Axios
         const ourMonths = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
         let todayDate = new Date();
         let todayMonth = ourMonths[todayDate.getMonth()];
         let todayDay = todayDate.getDate();
         const todaySearch = `${todayMonth}-${todayDay}`
         console.log (todaySearch)
+        // Test run to pull all data
+        axios.get(`/wdii/showday/${todaySearch}`)
+            .then (res => {
+                console.log (res.data)
+            }) 
+            .catch((error) => {
+                console.log (`Error pulling data: ${error}`)
+            });
     }
 
     onChangeOurSearch(e) {
@@ -44,9 +50,7 @@ export default class DayBody extends Component {
     render() {
         return (
             <>
-                {/* <Header /> */}
                 <h1>Please enter a month and day in the search box in for format of MMM-DD, or enter ALL to see all entries.</h1>
-                {/* Day Search */}
                 <form onSubmit={this.onSubmit}>
                     <label>Date:</label>
                     <input 
