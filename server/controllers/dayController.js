@@ -23,7 +23,7 @@ export const getAllDays = async (req, res) => {
 }
 
 export const addDay = async (req, res) => {
-    const ourMonths = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+    
     const { day, name } = req.body;
     try {
         if (ourMonths.includes(day.toLowerCase().substring(0,3))) {

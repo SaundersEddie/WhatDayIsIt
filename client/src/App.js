@@ -11,13 +11,14 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <Header />
         <Switch>
-          <Route exact path="/" component={Header} />
+          <Route exact path="/" component={DayBody} />
           <Route path="/about" component={About} />
           <Route path="/usage" component={Usage} />
          </Switch>
       </BrowserRouter>
-      <DayBody />
+      {/* <DayBody /> */}
     </>
   );
 }
