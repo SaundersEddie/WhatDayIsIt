@@ -37,7 +37,7 @@ Application can be executed from the following URL:
 
 # Future
 
-There are some bugs that are in the queue to being resolved, such as the validation of month entry, right now a user could use the API call to push Jan-99 to the database
+There are some bugs that are in the queue to being resolved, such as the validation of month entry, right now a user could use the API call to push Jan-99 to the database.  
 Much cleanup needed of the display, in case anyone hadn't guessed, I'm not really an artist type. :)
 
 # Download
