@@ -1,8 +1,45 @@
 * {
   margin: 15px;
   /* padding: 15px; */
-  background-color: antiquewhite;
+  background-color: rgb(199, 181, 157);
 }
+
+body {
+  color: purple;
+}
+
+a {
+  color: darkblue;
+  text-decoration: none;
+}
+
+#dayResults {
+  color: black;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#dayResults td, #dayResults tr {
+  border: 1px solid black;
+  color: black
+}
+
+#dayResults tr:nth-child(even) {
+  background-color: gold ;
+}
+
+#dayResults tr:hover {
+  color: aliceblue;
+}
+
+#dayResults th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: blue;
+  color: red;
+}
+
 
 #header {
   font-size: larger;
@@ -18,13 +55,8 @@
   padding: 0 1rem;
 }
 
-body {
-  /* margin: 15px; */
-  /* padding: 15px; */
-  color: purple;
-}
-
 #container {
   margin: 15px;
   padding: 10px;
 }
+

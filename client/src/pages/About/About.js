@@ -4,7 +4,6 @@ import Header from '../../components/Header/Header';
 export default function About() {
     return (
         <>
-            <Header />
             <h1>About Page</h1>
             <hr/>
             <h3>Coding</h3>

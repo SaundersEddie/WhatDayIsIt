@@ -95,13 +95,11 @@ export default class DayBody extends Component {
                 </form>
                 <h1>Our Results</h1>
                 <hr/>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Day</th>
-                            <th>Day Of</th>
-                        </tr>
-                    </thead>
+                <table id="dayResults">
+                    <tr>
+                        <th>Day</th>
+                        <th>Day Of</th>
+                    </tr>
                     <tbody>
                         {this.dayList()}
                     </tbody>
