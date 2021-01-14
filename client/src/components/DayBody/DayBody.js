@@ -55,7 +55,6 @@ export default class DayBody extends Component {
                 });
         }
         else {
-            // Check our entry
             let ourMonths = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
             if (ourMonths.includes(this.state.ourSearch.toLowerCase().substring(0,3))) {
                 axios.get ('/wdii/showday/'+this.state.ourSearch)

@@ -4,7 +4,7 @@ National Day of ....
 
 ## Description
 
-A small app created just to show what national day it is. This will also include national holidays. this is an HTML front end with a mySQL database.
+A small app created just to show what national day it is. This will also include national holidays. this is an react front end with NodeJS backend.
 
 # Table of Contents
 
@@ -15,7 +15,7 @@ A small app created just to show what national day it is. This will also include
 - [Future](#Future)
 - [Download](#Download)
 - [Credits](#Credits)
-- [Notes](#Notes)
+- [Screenies](#Screenies)
 
 # User Story
 
@@ -34,10 +34,12 @@ node_modules, .env folder has been added to .gitignore
 # Usage
 
 Application can be executed from the following URL:
+https://dashboard.heroku.com/apps/national-day-of
 
 # Future
 
-There are some bugs that are in the queue to being resolved, such as the validation of month entry, right now a user could use the API call to push Jan-99 to the database.  
+There are some bugs that are in the queue to being resolved, such as the validation of month entry, right now a user could use the API call to push Jan-99 to the database.
+Code needed to either add a 0 to day number or remove a 0 to a day number below 10.
 Change displayed results so the first character of each record returned is capitailized.
 Much cleanup needed of the display, in case anyone hadn't guessed, I'm not really an artist type. :)
 
@@ -49,3 +51,5 @@ https://github.com/SaundersEddie/WhatDayIsIt
 # Credits
 
 Javascript Coding - Eddie Saunders (https://github.com/SaundersEddie)
+
+# Screenies
