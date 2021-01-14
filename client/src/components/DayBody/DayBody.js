@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import './DayBody.css';
 
 const OurDay = props => (
     <tr>
@@ -41,8 +42,6 @@ export default class DayBody extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        console.log ("Find Clicked: ", this.state.ourSearch);
-
         if (this.state.ourSearch.toLowerCase() === "all") {
             axios.get ('/wdii/alldays')
                 .then (res => {
@@ -56,9 +55,10 @@ export default class DayBody extends Component {
                 });
         }
         else {
+            // Check our entry
             let ourMonths = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
-            let todayDate = new Date();
-            axios.get ('/wdii/showday/'+ourMonths[todayDate.getMonth()]+'-'+todayDate.getDate())
+            if (ourMonths.includes(this.state.ourSearch.toLowerCase().substring(0,3))) {
+                axios.get ('/wdii/showday/'+this.state.ourSearch)
                 .then (res => {
                     this.setState ({ 
                         ourSearch: '',
@@ -68,6 +68,7 @@ export default class DayBody extends Component {
                 .catch ((error) => {
                     console.log ("error:", error)
                 });
+            }
         }
     }
 

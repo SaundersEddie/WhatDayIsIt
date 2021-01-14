@@ -1,0 +1,24 @@
+#dayResults {
+  color: black;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#dayResults th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: palegoldenrod;
+  color: black;
+}
+
+#dayResults td,
+#dayResults tr {
+  font-size: x-large;
+  border: 1px solid black;
+  color: black;
+}
+
+#dayResults td:hover {
+  color: aliceblue;
+}
