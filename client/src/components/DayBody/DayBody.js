@@ -27,7 +27,6 @@ export default class DayBody extends Component {
         axios.get ('/wdii/showday/'+ourMonths[todayDate.getMonth()]+'-'+todayDate.getDate())
             .then (res => {
                 this.setState ({ ourResults: res.data })
-                console.log ("our results: " , this.state.ourResults)
             })
             .catch ((error) => {
                 console.log ("error:", error)
@@ -72,10 +71,10 @@ export default class DayBody extends Component {
     }
 
     dayList() {
-        return this.state.ourResults.map(currentday => {
-            return <OurDay ourResults={currentday} key={currentday._id} />;
-        })
-    }
+            return this.state.ourResults.map(currentday => {
+            return <OurDay ourResults={currentday} key={currentday._id} />
+            })
+        }
 
     render() {
         return (
@@ -95,15 +94,19 @@ export default class DayBody extends Component {
                 </form>
                 <h1>Our Results</h1>
                 <hr/>
-                <table id="dayResults">
-                    <tr>
-                        <th>Day</th>
-                        <th>Day Of</th>
-                    </tr>
-                    <tbody>
-                        {this.dayList()}
-                    </tbody>
-                </table>
+                {this.state.ourResults.length > 0 &&
+                    <table id="dayResults">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Day Of</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.dayList()}
+                        </tbody>
+                    </table>
+                }
             </>
         )
     }
