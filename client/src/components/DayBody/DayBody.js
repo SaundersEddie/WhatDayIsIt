@@ -4,7 +4,7 @@ import './DayBody.css';
 
 const OurDay = props => (
     <tr>
-        <td>{props.ourResults.day}</td>
+        <td>{props.ourResults.day.charAt(0).toUpperCase()+props.ourResults.day.substring(1)}</td>
         <td>{props.ourResults.name}</td>
     </tr>
 )
@@ -95,7 +95,7 @@ export default class DayBody extends Component {
                 <h1>Our Results</h1>
                 <hr/>
                 {this.state.ourResults.length > 0 
-                   ? <table id="dayResults">
+                ?   <table id="dayResults">
                         <thead>
                             <tr>
                                 <th>Day</th>
