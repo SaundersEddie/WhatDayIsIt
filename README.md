@@ -40,6 +40,7 @@ https://national-day-of.herokuapp.com/
 # Future
 
 Modify backend code so all the letter capitialization is done during the add day function.
+When displaying all records, display in MMM-DD order.
 
 # Download
 
@@ -52,3 +53,7 @@ Javascript Coding:
 Eddie Saunders (https://github.com/SaundersEddie)
 
 # Screenshot
+
+![Screenshot](WDII.jpg)
+
+[Github](https://github.com/saundersEddie) • [Facebook](https://www.facebook.com) • [Contact Me](mailto:edwyn.saunders@outlook.com)
