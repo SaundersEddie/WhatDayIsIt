@@ -4,11 +4,12 @@ import Header from './components/Header/Header';
 import DayBody from './components/DayBody/DayBody';
 import Usage from './pages/Usage/Usage';
 import About from './pages/About/About';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import './App.css';
 
 function App() {
   return (
-    <>
+    <div className="container">
       <BrowserRouter>
       <Header />
         <Switch>
@@ -17,7 +18,7 @@ function App() {
           <Route path="/usage" component={Usage} />
          </Switch>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

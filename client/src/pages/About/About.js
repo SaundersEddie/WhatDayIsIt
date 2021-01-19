@@ -10,7 +10,18 @@ export default function About() {
             <p>This app was coded by Eddie Saunders</p>
 
             <h3>Technology</h3>
-            <p>JavaScript, React, MongoDB, Axios</p>
+            <p>Axios, Express, JavaScript, MongoDB, React</p>
+
+            <h3>Github</h3>
+            <a 
+                href="https://github.com/SaundersEddie/WhatDayIsIt"
+                target="_blank"
+            >
+                Github Repository 
+            </a>
+
+            <h3>Contact Me</h3>
+
         </>
     )
 }

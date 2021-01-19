@@ -25,6 +25,7 @@ As a user I want to know if today is a national day of or public holiday.
 
 Version 0.0 Initial Build
 Version 0.5 API framework complete
+Version 1.0 First Prod Build.
 
 # Code Style and Technology
 
@@ -38,10 +39,7 @@ https://dashboard.heroku.com/apps/national-day-of
 
 # Future
 
-There are some bugs that are in the queue to being resolved, such as the validation of month entry, right now a user could use the API call to push Jan-99 to the database.
-Code needed to either add a 0 to day number or remove a 0 to a day number below 10.
-Change displayed results so the first character of each record returned is capitailized.
-Much cleanup needed of the display, in case anyone hadn't guessed, I'm not really an artist type. :)
+Modify backend code so all the letter capitialization is done during the add day function.
 
 # Download
 

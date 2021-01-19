@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import './DayBody.css';
+import Button from 'react-bootstrap/Button'
+import Table from 'react-bootstrap/Table'
+import Form from 'react-bootstrap/Form'
+import Col from 'react-bootstrap/Col'
 
 const OurDay = props => (
     <tr>
@@ -79,23 +82,38 @@ export default class DayBody extends Component {
     render() {
         return (
             <>
-                <h1>Please enter a month and day in the search box in for format of MMM-DD, or enter ALL to see all entries.</h1>
-                <form onSubmit={this.onSubmit}>
-                    <label>Date:</label>
-                    <input 
-                        type="text" 
-                        value={this.state.ourSearch}
-                        onChange={this.onChangeOurSearch} 
-                    />
-                    <input 
-                        type="submit" 
-                        value="Find Day" 
-                    />
-                </form>
-                <h1>Our Results</h1>
-                <hr/>
+                <h3>Please enter a month and day in the search box to see what day it is.</h3>
+                <Form onSubmit={this.onSubmit}>
+                    <Form.Row>
+                        <Col>
+                            <Form.Label>Date:</Form.Label>
+                        </Col>
+                        <Col>
+                            <Form.Control 
+                                size="lg"
+                                type="text" 
+                                value={this.state.ourSearch}
+                                onChange={this.onChangeOurSearch} 
+                            />
+                        </Col>
+                        <Col>
+                            <Button 
+                                variant="dark"
+                                type="submit" 
+                                value="Find Day"
+                            >Find Day
+                            </Button>
+                        </Col>
+                </Form.Row>
+                <Form.Text className="text-muted">
+                    format:MMM-DD, or ALL
+                </Form.Text>
+                </Form>
+
+
+                <h3>Our Results</h3>
                 {this.state.ourResults.length > 0 
-                ?   <table id="dayResults">
+                ?   <Table striped border hover>
                         <thead>
                             <tr>
                                 <th>Day</th>
@@ -105,8 +123,8 @@ export default class DayBody extends Component {
                         <tbody>
                             {this.dayList()}
                         </tbody>
-                    </table>
-                :   <table id="dayResults">
+                    </Table>
+                :   <Table striped border hover>
                     <thead>
                         <tr>
                             <th>Day</th>
@@ -115,10 +133,10 @@ export default class DayBody extends Component {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>No Data To Display</td>
+                            <td colSpan="2">No Data To Display</td>
                         </tr>
                     </tbody>
-                </table>
+                </Table>
                 }
             </>
         )
