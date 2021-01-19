@@ -94,8 +94,8 @@ export default class DayBody extends Component {
                 </form>
                 <h1>Our Results</h1>
                 <hr/>
-                {this.state.ourResults.length > 0 &&
-                    <table id="dayResults">
+                {this.state.ourResults.length > 0 
+                   ? <table id="dayResults">
                         <thead>
                             <tr>
                                 <th>Day</th>
@@ -106,6 +106,19 @@ export default class DayBody extends Component {
                             {this.dayList()}
                         </tbody>
                     </table>
+                :   <table id="dayResults">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Day Of</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>No Data To Display</td>
+                        </tr>
+                    </tbody>
+                </table>
                 }
             </>
         )
