@@ -5,7 +5,6 @@ import DayBody from './components/DayBody/DayBody';
 import Usage from './pages/Usage/Usage';
 import About from './pages/About/About';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import './App.css';
 
 function App() {
   return (

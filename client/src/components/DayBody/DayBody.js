@@ -113,7 +113,7 @@ export default class DayBody extends Component {
 
                 <h3>Our Results</h3>
                 {this.state.ourResults.length > 0 
-                ?   <Table striped border hover>
+                ?   <Table striped hover>
                         <thead>
                             <tr>
                                 <th>Day</th>
@@ -124,7 +124,7 @@ export default class DayBody extends Component {
                             {this.dayList()}
                         </tbody>
                     </Table>
-                :   <Table striped border hover>
+                :   <Table striped hover>
                     <thead>
                         <tr>
                             <th>Day</th>

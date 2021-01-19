@@ -8,10 +8,10 @@ export default function About() {
             <hr/>
             <h3>Coding</h3>
             <p>This app was coded by Eddie Saunders</p>
-
+            <br/>
             <h3>Technology</h3>
-            <p>Axios, Express, JavaScript, MongoDB, React</p>
-
+            <p>Axios, Express, JavaScript, MongoDB, React, React-Bootstrap</p>
+            <br/>
             <h3>Github</h3>
             <a 
                 href="https://github.com/SaundersEddie/WhatDayIsIt"
@@ -19,9 +19,9 @@ export default function About() {
             >
                 Github Repository 
             </a>
-
+            <br/> <br/>
             <h3>Contact Me</h3>
-
+            
         </>
     )
 }
