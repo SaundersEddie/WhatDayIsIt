@@ -85,17 +85,19 @@ export default class DayBody extends Component {
                 <h3>Please enter a month and day in the search box to see what day it is.</h3>
                 <Form onSubmit={this.onSubmit}>
                     <Form.Row>
-                        <Col>
+                        <Col xs={2} md={1} lg={1}>
                             <Form.Label>Date:</Form.Label>
                         </Col>
-                        <Col>
+
+                        <Col xs={2} md={4} lg={6}>
                             <Form.Control 
-                                size="lg"
+                                // size="lg"
                                 type="text" 
                                 value={this.state.ourSearch}
                                 onChange={this.onChangeOurSearch} 
                             />
                         </Col>
+                        
                         <Col>
                             <Button 
                                 variant="dark"

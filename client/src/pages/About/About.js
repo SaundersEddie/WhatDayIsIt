@@ -19,9 +19,6 @@ export default function About() {
             >
                 Github Repository 
             </a>
-            <br/> <br/>
-            <h3>Contact Me</h3>
-            
         </>
     )
 }
