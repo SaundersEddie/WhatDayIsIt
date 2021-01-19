@@ -1,4 +1,4 @@
-# WhatDayIsIt
+# What Day Is It?
 
 National Day of ....
 
@@ -15,7 +15,7 @@ A small app created just to show what national day it is. This will also include
 - [Future](#Future)
 - [Download](#Download)
 - [Credits](#Credits)
-- [Screenies](#Screenies)
+- [Screenshot](#Screenshot)
 
 # User Story
 
@@ -29,13 +29,13 @@ Version 1.0 First Prod Build.
 
 # Code Style and Technology
 
-This has been developed with Javascript, mongoDB, ExpressJS, React, NodeJS with VS Code.
+This has been developed with Javascript, mongoDB, ExpressJS, NodeJS, React, and React-Bootstrap with VS Code.
 node_modules, .env folder has been added to .gitignore
 
 # Usage
 
-Application can be executed from the following URL:
-https://dashboard.heroku.com/apps/national-day-of
+Application can be executed from the following URL:  
+https://national-day-of.herokuapp.com/
 
 # Future
 
@@ -43,11 +43,12 @@ Modify backend code so all the letter capitialization is done during the add day
 
 # Download
 
-The source for this app can be downloaded here:
+The source for this app can be downloaded here:  
 https://github.com/SaundersEddie/WhatDayIsIt
 
 # Credits
 
-Javascript Coding - Eddie Saunders (https://github.com/SaundersEddie)
+Javascript Coding:  
+Eddie Saunders (https://github.com/SaundersEddie)
 
-# Screenies
+# Screenshot
